@@ -1,0 +1,20 @@
+{% section 'product-template' %}
+
+<script>
+  // Override default values of shop.strings for each template.
+  // Alternate product templates can change values of
+  // add to cart button, sold out, and unavailable states here.
+  theme.productStrings = {
+    addToCart: {{ 'products.product.add_to_cart' | t | json }},
+    soldOut: {{ 'products.product.sold_out' | t | json }},
+    unavailable: {{ 'products.product.unavailable' | t | json }}
+  };
+</script>
+
+{% include 'judgeme_widgets', widget_type: 'judgeme_review_widget', concierge_install: true, auto_install: true %}
+
+
+<script>   document.sezzleConfig =   {     targetXPath: ".product__price",     renderToPath: "../SCRIPT-0",     merchantID: "95141bfd-9b9e-4c63-ae3e-c21440eb0aa6",   }
+</script>
+
+<script src="https://widget.sezzle.com/v1/javascript/price-widget/initial"></script>
